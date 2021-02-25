@@ -11,6 +11,7 @@
   "devDependencies": {},
   "dependencies": {
     "jquery": "^3.4.1",
+    "jquery-form-styler": "^2.0.2",
     "jquery.maskedinput": "^1.4.1",
     "normalize.css": "^8.0.1",
     "smart-grid": "^2.1.2",

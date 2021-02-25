@@ -1,3 +1,135 @@
-.button {
+.btn {
+  border-radius: 4px;
+  background: $btn;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $bg;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.42;
+  text-align: center;
+  @include tr;
+
+
+  &:hover, &:focus,&:active {
+    background: $btn-h;
+  }
+}
+
+.btn3{
+  @extend .btn;
+  border-radius: 100px;
+}
+
+.link{
+  border-radius: 100px;
+  border: 1px solid #0374c6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  color: #0374c6;
+  font-size: 14px;
+  font-weight: 600;
+  @include tr;
+
+  &:hover{
+    background: #0374c6;
+    color: $bg;
+  }
+}
+
+.arr{
+  width: 59px;
+  height: 59px;
+  background-color: rgba($bg,.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  cursor: pointer;
+  stroke: #ed9c3c;
+  @include tr;
+
+  svg{
+    display: block;
+  }
+
+  &:hover{
+    background: $bg;
+  }
+}
+
+
+.jq-selectbox{
+  width: 100%;
+  font-family: Gilroy;
+
+  &.opened{
+    .jq-selectbox{
+      &__trigger{
+        &-arrow{
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+
+  &__select{
+    height: 61px;
+    padding: 0 40px 0 25px;
+    display: flex;
+    align-items: center;
+
+    &-text{
+      color: #828282;
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+  &__trigger{
+    border: none;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    &-arrow{
+      position: static;
+      border: none;
+      width: 16px;
+      height: 10px;
+      background: url("/images/icons/arr-down.svg") 0 0 no-repeat;
+    }
+  }
+
+  &__dropdown{
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 0;
+    border-radius: 4px;
+    background-color: #f3f3f3;
+  }
+
+  li{
+    padding: 15px 25px;
+    color: #828282;
+    font-size: 14px;
+    font-weight: 500;
+
+    &.selected{
+      background-color: $btn-h;
+    }
+  }
+}
+
+select{
+
+
+
 
 }

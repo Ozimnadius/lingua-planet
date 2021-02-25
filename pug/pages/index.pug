@@ -4,4 +4,269 @@ block variables
     - var title = 'Главная'
 
 block content
-    h1 Страничка "Главная"
+    main.index
+        //- banner
+        section.index__banner
+            .banner
+                div(data-speed='500' data-autoplay='true' data-autoplayDelay='7000' data-pagination='true').swiper-container.banner__slider
+                    .swiper-wrapper
+                        each i in [1,2,3,4,5]
+                            .swiper-slide.banner__slide
+                                .banner__imgs
+                                    picture
+                                        source(srcset='images/content/slider/img.jpg' type='image/jpeg' media='(min-width:991.9px)')
+                                        source(srcset='images/content/slider/img-t.jpg' type='image/jpeg' media='(min-width:768.9px)')
+                                        source(srcset='images/content/slider/img-m.jpg' type='image/jpeg' media='(min-width:320px)')
+                                        img(src='images/content/slider/img.jpg' alt='lorem1').banner__img
+                                .container
+                                    .row
+                                        .banner__wrap
+                                            .banner__content
+                                                h2
+                                                    |Мечтаете
+                                                    br
+                                                    |об образовании
+                                                    br
+                                                    |за границей?
+                                                p У нас вы найдете широчайший выбор программ для любой цели – от коротких языковых курсов до получения высшего образования в самых престижных университетах мира.
+                                            button(type='button').banner__btn Выбрать страну
+                .banner__nav
+                    .container
+                        .banner__arrs
+                            button(type='button').arr.banner__prev
+                                <svg width="11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.47694 16.9354L1.72656 9.18498L9.47694 1.4346" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            button(type='button').arr.banner__next
+                                <svg width="11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.91954 1.43457L9.66992 9.18495L1.91954 16.9353" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                        .banner__pag
+        //- advantages
+        section.index__advantages
+            .advantages
+                .container
+                    .advantages__list
+                        each i in advsList
+                            .advantages__item
+                                +image('images/content/advantages/img.svg')
+                                span!=i
+        //- sets
+        section.index__sets
+            .sets
+                .container
+                    .sets__top
+                        h2.sets__title
+                            |Подбор программы
+                            br
+                            |обучения за рубежом
+                        .sets__sub Наша компания сотрудничает с образовательными учреждениями в США, Канаде, странах Европы и Азии.
+                    form.sets__fields
+                        .sets__field
+                            select
+                                option(value='lorem1') Тип программы
+                                option(value='lorem1') Lorem lorem
+                                option(value='lorem1') Lorem3
+                                option(value='lorem1') Lorem4
+                                option(value='lorem1') Lorem5
+                                option(value='lorem1') Lorem6
+                                option(value='lorem1') Lorem7
+                        .sets__field
+                            select
+                                option(value='lorem1') Страны
+                                option(value='lorem1') Lorem lorem
+                                option(value='lorem1') Lorem3
+                                option(value='lorem1') Lorem4
+                                option(value='lorem1') Lorem5
+                                option(value='lorem1') Lorem6
+                                option(value='lorem1') Lorem7
+                        .sets__field
+                            select
+                                option(value='lorem1') Язык
+                                option(value='lorem1') Lorem lorem
+                                option(value='lorem1') Lorem3
+                                option(value='lorem1') Lorem4
+                                option(value='lorem1') Lorem5
+                                option(value='lorem1') Lorem6
+                                option(value='lorem1') Lorem7
+                        .sets__field
+                            button(type='submit').btn.sets__submit Подобрать
+        //- edu
+        section.index__edu
+            .edu
+                .container
+                    .edu__grid
+                        .edu__left
+                            .edu__image.eimage
+                                +image('images/content/edu/img.jpg')
+                                .eimage__desc
+                                    .eimage__name Анастасия Сатарина
+                                    .eimage__txt
+                                        |Основатель компании
+                                        br
+                                        |“Лингва Плэнет”
+                            .edu__list
+                                each i in eduList
+                                    .edu__item
+                                        .eitem
+                                            .eitem__top.eitem__small= i.top
+                                            .eitem__middel.eitem__big= i.middle
+                                            .eitem__bottom.eitem__small= i.bottom
+                        .edu__right
+                            h2.edu__title
+                                |«Обучение за рубежом
+                                br
+                                |с Lingua Planet – это просто! »
+                            .edu__cols
+                                .edu__col
+                                    p Наша компания сотрудничает с образовательными учреждениями в США, Канаде, странах Европы и Азии. В «Лингва Плэнет» вы найдете широчайший выбор программ для любой цели – от коротких однонедельных языковых курсов до получения высшего образования в самых престижных университетах.
+                                    p Наш опыт – залог правильной инвестиции в будущее, которая поспособствует развитию, раскрытию потенциала, возможности найти высокооплачиваемую работу в любой стране.
+                                .edu__col
+                                    p Чтобы узнать исчерпывающую информацию о программах и условиях, позвоните в «Лингва Плэнет» - мы с радостью проконсультируем вас и подберем самый лучший вариант обучения за рубежом!
+                                    .edu__consult
+                                        p Оставьте заявку и получите бесплатную консультацию от наших специалистов
+                                        button(type='button').btn3 Получить консультацию
+        //- pops
+        section.index__pops
+            .pops
+                .container
+                    .pops__grid
+                        .pops__left
+                            h2.pops__title Популярные направления
+                            .pops__txt Вне зависимости от того, какую программу вы выберете, наше сопровождение на всех этапах полностью избавит вас от организационных хлопот.
+                            a(href='/').pops__link.link Перейти в раздел
+                        .pops__right
+                            .pops__txt «Лингва Плэнет» специализируется на зарубежном образовании и имеет широчайшую партнерскую сеть, включающую как небольшие частные школы, так и крупнейшие университеты мирового уровня.
+                            .pops__list
+                                each i,x in ['Обучение в Германии','Обучение в Великобритании','Обучение в канаде','Французский во Франции']
+                                    a(href='/').pops__item.pitem
+                                        +image('images/content/pops/'+(x+1)+'.jpg')
+                                        span.pitem__desc
+                                            span.pitem__title= i
+                                            span.pitem__bottom
+                                                span.pitem__txt 8 программ
+                                                span.pitem__link
+                                                    span Смотреть все
+                                                    <svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18.5303 6.53033C18.8232 6.23744 18.8232 5.76256 18.5303 5.46967L13.7574 0.696699C13.4645 0.403806 12.9896 0.403806 12.6967 0.696699C12.4038 0.989593 12.4038 1.46447 12.6967 1.75736L16.9393 6L12.6967 10.2426C12.4038 10.5355 12.4038 11.0104 12.6967 11.3033C12.9896 11.5962 13.4645 11.5962 13.7574 11.3033L18.5303 6.53033ZM0 6.75H18V5.25H0V6.75Z" fill="white"/>
+                                                    </svg>
+        //- offers
+        section.index__offers
+            .offers
+                .container
+                    .offers__top
+                        .offers__left
+                            h2.offers__title Актуальные предложения
+                        .offers__center
+                            .offers__txt У нас вы найдете широчайший выбор программ для любой цели – от коротких языковых курсов до получения высшего образования в самых престижных университетах мира.
+                        .offers__right
+                            a(href='/').offers__link.link Смотреть все акции
+                .offers__slider
+                    .swiper-container.offers__swiper
+                        .swiper-wrapper
+                            each i,x in ['Акции в Европейском <br> центре (EC)!','Скидки до 30% на обучение <br> в Kaplan International!','Акции в Европейском <br> центре (EC)!','Скидки до 30% на обучение <br> в Kaplan International!','Акции в Европейском <br> центре (EC)!','Скидки до 30% на обучение <br> в Kaplan International!','Акции в Европейском <br> центре (EC)!','Скидки до 30% на обучение <br> в Kaplan International!',]
+                                a(href='').swiper-slide.offer
+                                    +image('images/content/offers/img'+(x+1)+'.jpg')
+                                    span.offer__title!=i
+                    .offers__nav
+                        .container
+                            button(type='button').offers__prev.offers__arr
+                                <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.5 2L8.5 9L1.5 16" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            button(type='button').offers__next.offers__arr
+                                <svg width="10" height="18" viewBox="0 0 10 18" fill="none"  xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.5 16L1.5 9L8.5 2" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+        //- steps
+        section.index__steps
+            .steps
+                .container
+                    .steps__top
+                        h2.steps__title
+                            |Обучение за рубежом
+                            br
+                            |с Lingua Planet – это просто!
+                        .steps__sub
+                            |Работа с «Лингва Плэнет» состоит из
+                            br
+                            |следующих этапов
+                    .steps__list
+                        each i,x in ['Оставляйте вашу заявку <br> на консультацию','Выбор учебного заведения <br> по вашим критериям','Заключение договора','Зачисление']
+                            .steps__item.step
+                                .step__num
+                                    span= '0'+(x+1)
+                                    <svg width="173" height="6" viewBox="0 0 173 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="2.89963" cy="2.89963" r="2.21165" fill="#D7C7E2"/>
+                                    <circle cx="23.6989" cy="2.89963" r="2.21165" fill="#D7C7E2"/>
+                                    <circle cx="44.4983" cy="2.89963" r="2.21165" fill="#D7C7E2"/>
+                                    <circle cx="65.2976" cy="2.89963" r="2.21165" fill="#D7C7E2"/>
+                                    <circle cx="86.0969" cy="2.89963" r="2.21165" fill="#D7C7E2"/>
+                                    <circle cx="106.896" cy="2.89963" r="2.21165" fill="#D7C7E2"/>
+                                    <circle cx="127.695" cy="2.89963" r="2.21165" fill="#D7C7E2"/>
+                                    <circle cx="148.494" cy="2.89963" r="2.21165" fill="#D7C7E2"/>
+                                    <circle cx="169.294" cy="2.89963" r="2.21165" fill="#D7C7E2"/>
+                                    </svg>
+                                    +image('images/content/steps/'+(x+1)+'.png')
+                                .step__txt!=i
+                    .steps__bottom
+                        .steps__txt
+                            |Оставьте заявку и получите бесплатную
+                            br
+                            |консультацию от наших специалистов
+                        button(type='button').btn3.steps__btn Получить консультацию
+        //- revs
+        section.index__revs
+            .revs
+                .container
+                    .revs__wrap
+                        .revs__top
+                            .revs__left
+                                h2.revs__title Отзывы студентов Lingua Planet
+                            .revs__center
+                                .revs__sub Более 800 студентов получили образование своей мечты благодаря “Лингва Плэнет”
+                            .revs__right
+                                a(href='/').revs__link Смотреть все
+                        .revs__slider
+                            .swiper-container.revs__swiper
+                                .swiper-wrapper
+                                    each i in revsList
+                                        a(href='/').swiper-slide.rev
+                                            span.rev__wrap
+                                                span.rev__img
+                                                    +image(i.img)
+                                                    span.rev__quote
+                                                        <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M19.0383 12.7867C19.7279 12.9852 20.4176 13.086 21.0884 13.086C22.1243 13.086 22.9887 12.8492 23.659 12.5593C23.0128 14.9249 21.4606 19.0067 18.3683 19.4664C18.082 19.509 17.8473 19.716 17.7692 19.9948L17.0933 22.4121C17.0363 22.6165 17.0701 22.8353 17.1867 23.0127C17.3033 23.1901 17.4907 23.3085 17.7007 23.3373C17.9289 23.3684 18.1616 23.3843 18.3921 23.3843C22.1038 23.3843 25.7796 19.5102 27.3307 13.963C28.2412 10.7086 28.5082 5.81591 26.2654 2.73629C25.0104 1.01305 23.1794 0.0928349 20.8232 0.000902803C20.8135 0.000609072 20.8041 0.000315342 20.7944 0.000315342C17.8872 0.000315597 15.3093 1.95823 14.5251 4.76117C14.0566 6.43682 14.2684 8.19413 15.1219 9.71059C15.9663 11.21 17.3571 12.3029 19.0383 12.7867Z" fill="white"/>
+                                                        <path d="M0.839954 9.7103C1.68438 11.21 3.07511 12.3029 4.75633 12.7867C5.44597 12.9852 6.13561 13.086 6.80616 13.086C7.84209 13.086 8.70678 12.8492 9.37703 12.5594C8.73086 14.9249 7.17859 19.0067 4.08608 19.4664C3.79971 19.509 3.56532 19.7161 3.4869 19.9948L2.81107 22.4121C2.75409 22.6165 2.78786 22.8353 2.90447 23.0127C3.02078 23.1901 3.20817 23.3085 3.41847 23.3373C3.64639 23.3684 3.87901 23.3843 4.10987 23.3843C7.82153 23.3843 11.4974 19.5102 13.0487 13.963C13.959 10.7086 14.2259 5.81591 11.9829 2.73571C10.7281 1.01276 8.89681 0.0922551 6.54093 0.000614794C6.53124 0.000321063 6.52184 2.92393e-05 6.51185 2.92402e-05C3.60497 2.94943e-05 1.02676 1.95794 0.242542 4.76088C-0.225344 6.43654 -0.0132841 8.19413 0.839954 9.7103Z" fill="white"/>
+                                                        </svg>
+                                                span.rev__name= i.name
+                                                span.rev__course= i.course
+                                                span.rev__content= i.content
+                                                span.rev__link Читать весь отзыв
+
+
+                            .revs__nav
+                                button(type='button').revs__arr.revs__prev
+                                    <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 16L1.5 9L8.5 2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                button(type='button').revs__arr.revs__next
+                                    <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.5 2L8.5 9L1.5 16" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                        .revs__bottom
+                            .revs__txt
+                                |Оставьте заявку и получите бесплатную
+                                br
+                                |консультацию от наших специалистов
+                            button(type='button').revs__btn Получить консультацию
+                            button(type='button').revs__btn2.btn3 Оставить отзыв
+        //- map
+        section.index__map
+            //TODO сюда вставить iframe из конструктора карт
+            +image('images/content/map.jpg')
+
+
+
+

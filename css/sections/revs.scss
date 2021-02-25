@@ -1,0 +1,288 @@
+.revs {
+  padding-top: 55px;
+  padding-bottom: 135px;
+
+  .container{
+    max-width: 1588px;
+  }
+
+  &__wrap {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    border: 1px solid #d0e1eb;
+    background-color: #ecf5fa;
+    padding: 140px 100px;
+    position: relative;
+
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 0;
+      top: 22px;
+      bottom: 22px;
+      left: 22px;
+      right: 22px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      border: 1px solid #12668e;
+      opacity: 0.2;
+    }
+
+  }
+
+  &__top, &__slider, &__bottom {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__top {
+    @include row-flex;
+    margin-bottom: 150px;
+  }
+
+  &__left {
+    @include col;
+    @include size(8);
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    max-width: 420px;
+  }
+
+  &__center {
+    @include col;
+    @include size(12);
+  }
+
+  &__sub {
+    color: #30414d;
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  &__right {
+    @include col;
+    @include size(4);
+    text-align: right;
+  }
+
+  &__link {
+    color: #fc7d5f;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  &__slider{
+    position: relative;
+  }
+
+  &__swiper{
+    padding: 25px;
+    padding-top: 120px;
+    padding-bottom: 40px;
+    margin: -25px;
+    margin-top: -120px;
+    margin-bottom: -40px;
+  }
+
+  &__nav{
+    position: absolute;
+    pointer-events: none;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    left: -35px;
+    right: -35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__arr{
+    width: 58px;
+    height: 58px;
+    background-color: $btn;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    stroke: $bg;
+    pointer-events: all;
+    @include tr;
+
+    &:hover{
+      background: $btn-h;
+    }
+  }
+
+  &__bottom{
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__txt{
+    opacity: 0.8;
+    color: #30414d;
+    margin-right: 35px;
+  }
+
+  &__btn{
+    width: 263px;
+    height: 49px;
+    border-radius: 100px;
+    border: 1px solid #30414d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #30414d;
+    font-weight: 600;
+
+    margin-right: 20px;
+    @include tr;
+
+    &:hover{
+      background: #30414d;
+      color: $bg;
+    }
+  }
+
+  &__btn2{
+    width: 235px;
+    height: 49px;
+    font-size: 18px;
+  }
+
+
+}
+
+.rev {
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid rgba(#30414d,0.15);
+  height: auto;
+  @include tr;
+
+  &:hover{
+    transform: scale(1.04);
+    box-shadow: 0 10px 20px #98b1c3;
+    background-color: $bg;
+
+    &:before{
+      opacity: 0.2;
+    }
+    
+    img{
+      border-color: #ecf5fa;
+    }
+
+    .rev{
+      &__wrap{
+        transform: scale(0.96);
+      }
+      &__quote{
+        background-color: #46afe8;
+      }
+      &__link{
+        color: $btn;
+      }
+    }
+  }
+
+  &:before{
+    content: '';
+    display: block;
+    border-radius: 8px;
+    border: 1px solid #12668e;
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    @include tr;
+    opacity: 0;
+  }
+
+  &__wrap{
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 25px 25px 25px;
+    color: #000000;
+    @include tr;
+  }
+
+  &__img{
+    display: block;
+    position: relative;
+    //transform: translateY(-60%);
+    margin-top: -120px;
+    margin-bottom: 20px;
+    img{
+      width: 195px;
+      height: 195px;
+      border: 20px solid #d7e8f1;
+      border-radius: 50%;
+      @include tr;
+    }
+
+  }
+
+  &__quote{
+    width: 66px;
+    height: 66px;
+    background-color: #a6d5ee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    right: -9px;
+    @include tr;
+
+    svg{
+      display: block;
+    }
+  }
+
+  &__name{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  &__course{
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  &__content{
+    opacity: 0.8;
+    font-size: 14px;
+    line-height: lh(14px,23.03px);
+    margin-bottom: 20px;
+  }
+
+  &__link{
+    margin-top: auto;
+    font-weight: 600;
+    text-align: center;
+    @include tr;
+  }
+}

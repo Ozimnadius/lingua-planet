@@ -3,8 +3,12 @@
 $font: 'Gilroy', Arial, sans-serif;
 
 //colors
-$text: #4D4D4D;
+$text: #192b38;
 $bg: #ffffff;
+$btn: #ffa478;
+$btn-h: #FFA34E;
+
+
 
 //another
 $font-size: 16px;
@@ -18,6 +22,15 @@ $font-size: 16px;
 
 //sections
 @import "sections/header";
+@import "sections/index";
+@import "sections/banner";
+@import "sections/advantages";
+@import "sections/sets";
+@import "sections/edu";
+@import "sections/pops";
+@import "sections/offers";
+@import "sections/steps";
+@import "sections/revs";
 @import "sections/footer";
 
 

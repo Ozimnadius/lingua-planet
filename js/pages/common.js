@@ -32,3 +32,25 @@ function imageResize(src) {
 // imageResize('https://loremflickr.com/320/440');
 
 const wWidth = $(window).width();
+
+function initParams(item, slider) {
+
+    let params = item.params,
+        data = slider.dataset,
+        speed = parseInt(data.speed) || 300,
+        autoplay = (data.autoplay == 'true'),
+        delay = parseInt(data.autoplayDelay) || 5000,
+        pagination = (data.pagination == 'true');
+
+    params.speed = speed;
+
+    if (autoplay) {
+        params.autoplay.enabled = autoplay;
+        params.autoplay.delay = delay;
+    }
+
+
+    if (!pagination) {
+        params.pagination = {};
+    }
+}

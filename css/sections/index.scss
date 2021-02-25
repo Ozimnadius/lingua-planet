@@ -1,0 +1,23 @@
+.index{
+
+  &__sets{
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 10;
+  }
+
+  &__map{
+    height: 532px;
+    iframe{
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

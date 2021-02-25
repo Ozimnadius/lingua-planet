@@ -1,0 +1,124 @@
+.banner{
+  position: relative;
+
+  &__slide{
+    box-sizing: border-box;
+    height: 777px;
+    position: relative;
+  }
+
+  &__imgs{
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__slider{
+    .container{
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      padding-top: 260px;
+    }
+  }
+
+
+
+  &__wrap{
+    @include col;
+    @include size(10);
+    @include shift-left(12);
+  }
+
+  &__content{
+    margin-bottom: 35px;
+    h2{
+      font-size: 50px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 110.69%;
+    }
+
+    p{
+      opacity: 0.8;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 160%;
+    }
+  }
+
+  &__btn{
+    width: 247px;
+    height: 56px;
+    border-radius: 100px;
+    background-image: linear-gradient(89.62deg, #1e7eb1 0%, #47b1ea 100%);
+    color: $bg;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    &:hover{
+      background: linear-gradient(89.62deg, #46B0E9 10.36%, #47B1EA 88.57%);
+    }
+  }
+
+  &__nav{
+    pointer-events: none;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .container{
+      padding-top: 115px;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__arrs{
+    display: flex;justify-content: space-between
+  }
+
+  &__pag{
+    position: absolute;
+    bottom: 55px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    .swiper-pagination-bullet{
+      width: 50px;
+      height: 4px;
+      background-color: $bg;
+      opacity: 1;
+      border-radius: 0;
+      margin: 0 10px;
+      @include tr;
+    }
+
+    .swiper-pagination-bullet-active{
+      height: 8px;
+      background-color: $btn;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.sets{
+  background: url("/images/content/sets/bg.jpg") 0 0 no-repeat;
+  background-size: cover;
+  padding-top: 45px;
+  padding-bottom: 65px;
+
+  &__top{
+    color: $bg;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 40px;
+  }
+
+  &__title{
+    font-size: 36px;
+    font-weight: 600;
+    margin-right: 130px;
+    line-height: 122.19%;
+  }
+
+  &__sub{
+    opacity: 0.9;
+    font-size: 18px;
+    font-weight: 500;
+    max-width: 477px;
+    line-height: 160%;
+  }
+
+  &__fields{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+  }
+
+
+
+  &__submit{
+    width: 100%;
+    height: 61px;
+    font-size: 22px;
+  }
+
+}

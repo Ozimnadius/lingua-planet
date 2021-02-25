@@ -1,2 +1,96 @@
 .header {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+
+  &__top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+
+  &__contacts{
+    margin: 0 -10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__contact{
+    margin: 0 10px;
+    @include tr;
+    &:hover{
+      opacity: .7;
+    }
+  }
+
+  &__tels{
+    display: flex;
+  }
+
+  &__tel{
+    margin-right: 45px;
+    font-size: 20px;
+    font-weight: 600;
+    @include tr;
+
+    &:last-child{
+      margin: 0;
+    }
+
+    &:hover{
+      color: $btn-h;
+    }
+  }
+
+  &__btn{
+    width: 200px;
+    height: 46px;
+  }
+
+  &__bottom{
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav{
+    flex-grow: 1;
+    max-width: 1165px;
+    margin-right: auto;
+  }
+
+  &__search{
+    padding: 15px;
+    stroke: #333333;
+    @include tr;
+
+    &:hover{
+      stroke: $btn-h;
+    }
+    svg{
+      display: block;
+    }
+  }
+
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+
+  &__item{
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 19px 0;
+    @include tr;
+
+    &.active,&:hover{
+      color: $btn-h;
+    }
+  }
 }
