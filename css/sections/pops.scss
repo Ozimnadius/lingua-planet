@@ -1,25 +1,44 @@
-.pops{
+.pops {
   padding-top: 75px;
   padding-bottom: 95px;
-
-  &__grid{
-   @include row-flex;
+  @include lg-block {
+    padding: 80px 0;
+  }
+  @include sm-block {
+    padding-top: 50px;
   }
 
-  &__left{
+
+  &__grid {
+    @include row-flex;
+  }
+
+  &__left {
     @include col;
     @include size(6);
+    @include size-lg(24);
+    @include lg-block {
+      margin-bottom: 40px;
+    }
+    @include size-sm(24);
   }
 
-  &__title{
+  &__title {
     font-size: 36px;
     font-weight: 700;
     line-height: 110.69%;
     margin-bottom: 35px;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
     position: relative;
 
-    &:after{
+    @include sm-block {
+      font-size: 20px;
+      color: #1b4f6a;
+      padding-bottom: 30px;
+      margin-bottom: 20px;
+    }
+
+    &:after {
       content: '';
       display: block;
       width: 135px;
@@ -31,46 +50,59 @@
     }
   }
 
-  &__txt{
+  &__txt {
     max-width: 856px;
     color: #000000;
     font-size: 20px;
-    line-height: lh(20,28.4);
+    line-height: lh(20, 28.4);
     margin-bottom: 40px;
+    @include lg-block {
+      margin-bottom: 20px;
+    }
+    @include sm-block {
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
   }
 
-  &__link{
+  &__link {
     width: 199px;
     height: 42px;
 
   }
 
-  &__right{
+  &__right {
     @include col;
     @include size(18);
+    @include size-lg(24);
+    @include size-sm(24);
   }
 
-  &__list{
+  &__list {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
+    @include sm-block {
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+    }
   }
 
 }
 
-.pitem{
+.pitem {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
 
 
-  &:before{
+  &:before {
     content: '';
     display: block;
-    padding-top: calc(291/475*100%);
+    padding-top: calc(291 / 475 * 100%);
   }
 
-  &:after{
+  &:after {
     content: '';
     display: block;
     position: absolute;
@@ -82,18 +114,18 @@
     background: linear-gradient(180deg, rgba(26, 138, 179, 0) 36.69%, #1A8AB3 94.48%);
   }
 
-  &:hover{
+  &:hover {
 
-    img{
+    img {
       transform: scale(1.2);
     }
 
-    svg{
+    svg {
       transform: translateX(5px);
     }
   }
 
-  img{
+  img {
     position: absolute;
     z-index: 2;
     top: 0;
@@ -104,7 +136,7 @@
     @include tr;
   }
 
-  &__desc{
+  &__desc {
     position: absolute;
     z-index: 4;
     bottom: 20px;
@@ -113,33 +145,53 @@
     display: flex;
     flex-direction: column;
     color: $bg;
+    @include lg-block {
+      bottom: 15px;
+      left: 20px;
+      right: 20px;
+    }
   }
 
-  &__title{
+  &__title {
     font-size: 28px;
     font-weight: 500;
     margin-bottom: 5px;
+    @include lg-block {
+      font-size: 18px;
+    }
+    @include sm-block{
+      font-size: 16px;
+    }
   }
 
-  &__bottom{
+  &__bottom {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
   }
 
-  &__txt{
+  &__txt {
     font-size: 20px;
     font-weight: 300;
+    @include lg-block {
+      font-size: 14px;
+    }
+    @include sm-block{
+      font-size: 12px;
+    }
   }
 
-  &__link{
+  &__link {
     font-size: 14px;
     font-weight: 600;
     display: flex;
     align-items: center;
+    @include lg-block {
+      font-size: 12px;
+    }
 
-    svg{
+    svg {
       margin-left: 10px;
       @include tr;
     }

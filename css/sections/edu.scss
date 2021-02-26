@@ -1,13 +1,23 @@
-.edu{
-  &__grid{
-    display: flex;
-    //flex-wrap: wrap;
-    align-items: flex-start;
+.edu {
+  @include lg-block {
+    background-color: #f8f9fa;
+  }
+  @include sm-block {
+    background-color: #f3f8fb;
   }
 
-  &__left{
+  &__grid {
+    display: flex;
+    align-items: flex-start;
+
+    @include lg-block {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__left {
     padding-top: 90px;
-    padding-bottom: 130px;
+    padding-bottom: 100px;
     flex-shrink: 0;
     width: 600px;
     background-color: #f3f8fb;
@@ -19,8 +29,28 @@
     grid-template-columns: 358px 1fr;
     grid-gap: 60px;
     align-items: flex-start;
+    @include lg-block {
+      margin-left: -20px;
+      padding-left: 80px;
+      width: 680px;
+      padding-bottom: 100px;
+    }
+    @include sm-block {
+      grid-template-columns: 1fr;
+      grid-gap: 75px;
+      width: calc(100% + 20px);
+      padding-top: 30px;
+      padding-left: 35px;
+      padding-right: 35px;
+      margin: 0 -10px;
+      background: none;
+      border: none;
+      border-bottom: 1px solid #d3d3d3;
+      border-radius: 0;
+      padding-bottom: 20px;
+    }
 
-    &:before{
+    &:before {
       content: '';
       display: block;
       position: absolute;
@@ -32,16 +62,29 @@
       background-color: #f3f8fb;
       border-radius: 0px 0px 20px 0px;
       border-bottom: 1px solid #d3d3d3;
+      @include lg-block {
+        display: none;
+      }
     }
   }
 
-  &__item{
+  &__list {
+    @include sm-block {
+      width: 175px;
+      margin: 0 auto;
+    }
+  }
+
+  &__item {
     border-bottom: 1px solid #d3d3d3;
     padding: 40px 0;
     padding-right: 20px;
     position: relative;
+    @include sm-block {
+      padding: 40px 10px;
+    }
 
-    &:after{
+    &:after {
       content: '';
       display: block;
       width: 13px;
@@ -52,9 +95,13 @@
       z-index: 3;
       bottom: -6.5px;
       right: -6.5px;
+      @include sm-block {
+        right: 50%;
+        margin-right: -6.5px;
+      }
     }
 
-    &:before{
+    &:before {
       content: '';
       display: block;
       width: 29px;
@@ -66,15 +113,23 @@
       bottom: -14.5px;
       right: -14.5px;
       border-radius: 50%;
+      @include sm-block {
+        right: 50%;
+        margin-right: -14.5px;
+      }
     }
 
-    &:first-child{
+    &:first-child {
       padding-top: 20px;
+      @include sm-block {
+        padding-top: 0;
+      }
     }
 
-    &:last-child{
+    &:last-child {
       border-color: transparent;
-      &:before,&:after{
+
+      &:before, &:after {
         display: none;
       }
     }
@@ -82,15 +137,28 @@
 
   }
 
-  &__right{
+  &__right {
     padding-top: 90px;
     padding-bottom: 100px;
     padding-left: 60px;
     background-color: #f8f9fa;
     border-bottom: 1px solid #d3d3d3;
     position: relative;
+    @include lg-block {
+      padding-top: 60px;
+      padding-bottom: 70px;
+      padding-right: 65px;
+      margin-left: -20px;
+      margin-right: -20px;
+      border-bottom: none;
+    }
+    @include sm-block {
+      margin: 0;
+      padding: 50px 0;
+    }
 
-    &:before{
+
+    &:before {
       content: '';
       display: block;
       position: absolute;
@@ -101,44 +169,67 @@
       bottom: -1px;
       background-color: #f8f9fa;
       border-bottom: 1px solid #d3d3d3;
+      @include lg-block {
+        display: none;
+      }
     }
   }
 
-  &__title{
+  &__title {
     color: #1b4f6a;
     font-size: 36px;
     font-weight: 700;
     line-height: 128%;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    @include sm-block {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
   }
 
-  &__cols{
+  &__cols {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
+    @include sm-block {
+      grid-template-columns: 1fr;
+      grid-gap: 25px;
+    }
 
-    p{
+    p {
       opacity: 0.8;
       color: #30414d;
       font-size: 15px;
       line-height: 164.5%;
       margin-bottom: 30px;
+      @include sm-block {
+        margin-bottom: 25px;
+        font-size: 14px;
+      }
+
+      &:last-of-type{
+        margin-bottom: 0;
+      }
     }
   }
 
-  &__consult{
+  &__consult {
     margin-top: 85px;
     width: 100%;
     border-radius: 10px;
     border: 1px solid #d3d3d3;
     padding: 40px 30px 30px 30px;
-
-    p{
-      opacity: 0.8;
-      margin-bottom: 24px;
+    @include sm-block{
+      margin-top: 25px;
+      padding: 40px 25px 25px 25px;
     }
 
-    button{
+    p {
+      opacity: 0.8;
+      margin-bottom: 24px!important;
+    }
+
+    button {
       width: 100%;
       height: 47px;
     }
@@ -146,11 +237,11 @@
 
 }
 
-.eimage{
+.eimage {
   position: relative;
   color: $bg;
 
-  &:before{
+  &:before {
     content: '';
     display: block;
     position: absolute;
@@ -158,13 +249,16 @@
     bottom: 0;
     left: 0;
     right: 0;
-    transform: translate(-30px,40px);
+    transform: translate(-30px, 40px);
     border-radius: 10px;
     background-color: #3287ba;
     opacity: 0.1;
+    @include sm-block {
+      transform: translate(-20px, 30px);
+    }
   }
 
-  img{
+  img {
     border-radius: 10px;
     position: relative;
     z-index: 1;
@@ -173,34 +267,51 @@
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
   }
 
-  &__desc{
+  &__desc {
     position: absolute;
     z-index: 2;
     bottom: 30px;
     left: 30px;
     right: 30px;
+    @include sm-block{
+      left: 20px;
+      right: 20px;
+    }
   }
 
-  &__name{
+  &__name {
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 5px;
+    @include sm-block{
+      font-size: 18px;
+    }
+
   }
 
-  &__txt{
+  &__txt {
     font-size: 18px;
     font-weight: 300;
+    @include sm-block{
+      font-size: 14px;
+    }
   }
 }
 
-.eitem{
+.eitem {
+  @include sm-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-  &__small{
+  &__small {
     color: #30414d;
     font-size: 20px;
   }
 
-  &__big{
+  &__big {
     font-size: 56px;
     font-weight: 700;
     line-height: 1;
@@ -209,7 +320,7 @@
     -webkit-text-fill-color: transparent;
   }
 
-  &__top{
+  &__top {
 
   }
 

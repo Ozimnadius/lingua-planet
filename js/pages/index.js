@@ -28,10 +28,10 @@ $(function () {
     $('select').styler();
 
     let offersSwiper = new Swiper('.offers__swiper', {
-        slidesPerView: 1.2,
+        slidesPerView: 1.15,
         spaceBetween: 10,
         watchOverflow: true,
-        centeredSlides: true,
+        centeredSlides: false,
         loop: true,
         // Navigation arrows
         navigation: {
@@ -45,7 +45,7 @@ $(function () {
                 spaceBetween: 20,
                 centeredSlides: false,
             },
-            // when window width is >= 1360px
+            // when window width is >= 1200px
             1200: {
                 slidesPerView: 4,
                 spaceBetween: 20,
@@ -54,9 +54,8 @@ $(function () {
         }
     });
 
-
     let revsSwiper = new Swiper('.revs__swiper', {
-        slidesPerView: 1.1,
+        slidesPerView: 1.2,
         spaceBetween: 10,
         watchOverflow: true,
         // Navigation arrows
@@ -67,7 +66,7 @@ $(function () {
         breakpoints: {
             // when window width is >= 768px
             768: {
-                slidesPerView: 2,
+                slidesPerView: 1.8,
                 spaceBetween: 20,
             },
             // when window width is >= 1200px
@@ -78,5 +77,6 @@ $(function () {
         }
     });
 
+    $('input[type=tel]').mask('+7 (999) 999-99-99');
 
 });

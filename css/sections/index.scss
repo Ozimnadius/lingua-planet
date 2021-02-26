@@ -7,7 +7,14 @@
   }
 
   &__map{
+    border-top: 1px solid #d3d3d3;
     height: 532px;
+    @include md-block{
+      height: 612px;
+    }
+    @include sm-block{
+      height: 255px;
+    }
     iframe{
       border: none;
       width: 100%;

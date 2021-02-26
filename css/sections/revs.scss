@@ -1,9 +1,19 @@
 .revs {
   padding-top: 55px;
   padding-bottom: 135px;
+  @include lg-block {
+    padding-top: 0;
+    padding-bottom: 80px;
+  }
+  @include sm-block{
+    padding-bottom: 65px;
+  }
 
-  .container{
-    max-width: 1588px;
+  .container {
+    max-width: 1630px;
+    @include lg-block {
+      padding: 0;
+    }
   }
 
   &__wrap {
@@ -11,8 +21,18 @@
     border-radius: 20px;
     border: 1px solid #d0e1eb;
     background-color: #ecf5fa;
-    padding: 140px 100px;
+    padding: 100px 145px;
     position: relative;
+    @include lg-block {
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 75px 20px 60px 20px;
+    }
+    @include sm-block{
+      padding: 35px 10px 50px 10px;
+    }
 
 
     &:before {
@@ -28,6 +48,19 @@
       border-radius: 20px;
       border: 1px solid #12668e;
       opacity: 0.2;
+      @include lg-block {
+        bottom: 20px;
+        top: 20px;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        border-right: none;
+        border-left: none;
+        box-shadow: none;
+      }
+      @include sm-block{
+        display: none;
+      }
     }
 
   }
@@ -40,57 +73,107 @@
   &__top {
     @include row-flex;
     margin-bottom: 150px;
+    @include sm-block{
+      margin-bottom: 100px;
+    }
   }
 
   &__left {
     @include col;
     @include size(8);
+    @include size-lg(12);
+    @include size-sm(24);
   }
 
   &__title {
     font-size: 36px;
     font-weight: 700;
     max-width: 420px;
+    line-height: 142%;
+    @include sm-block{
+      font-size: 20px;
+      color: #1b4f6a;
+    }
   }
 
   &__center {
     @include col;
     @include size(12);
+    @include lg-block {
+      order: 1;
+      margin-top: 20px;
+    }
+    @include size-sm(24);
+    @include sm-block{
+      order: initial;
+      margin-bottom: 20px;
+    }
   }
 
   &__sub {
     color: #30414d;
     font-size: 28px;
     font-weight: 500;
+    @include lg-block {
+      font-size: 18px;
+    }
+    @include sm-block{
+      font-size: 16px;
+    }
   }
 
   &__right {
     @include col;
     @include size(4);
     text-align: right;
+    @include size-lg(12);
+    @include size-sm(24);
+    @include sm-block{
+      text-align: left;
+    }
   }
 
   &__link {
-    color: #fc7d5f;
+    color: $btn;
     font-size: 20px;
     font-weight: 600;
     text-decoration: underline;
+    @include tr;
+    @include sm-block{
+      font-size: 16px;
+    }
+
+    &:hover {
+      color: $btn-h;
+    }
   }
 
-  &__slider{
+  &__slider {
     position: relative;
   }
 
-  &__swiper{
+  &__swiper {
     padding: 25px;
     padding-top: 120px;
     padding-bottom: 40px;
     margin: -25px;
     margin-top: -120px;
     margin-bottom: -40px;
+    @include lg-block {
+      padding-left: 20px;
+      margin-left: -20px;
+      padding-right: 0;
+      margin-right: -20px;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    @include sm-block{
+      padding-top: 80px;
+      margin-top: -80px;
+    }
   }
 
-  &__nav{
+  &__nav {
     position: absolute;
     pointer-events: none;
     z-index: 100;
@@ -101,9 +184,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include lg-block {
+      display: none;
+    }
   }
 
-  &__arr{
+  &__arr {
     width: 58px;
     height: 58px;
     background-color: $btn;
@@ -115,25 +201,47 @@
     pointer-events: all;
     @include tr;
 
-    &:hover{
+    &:hover {
       background: $btn-h;
     }
   }
 
-  &__bottom{
+  &__bottom {
     margin-top: 90px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    @include lg-block {
+      margin-top: 55px;
+    }
+    @include md-block {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      grid-template-areas: 'btn2 btn2' 'txt btn';
+      justify-content: center;
+      justify-items: center;
+      grid-gap: 45px 30px;
+    }
+    @include sm-block{
+      margin-top: 30px;
+      grid-template-columns: 1fr;
+      grid-template-areas: 'btn2' 'txt' 'btn';
+      grid-gap: 30px;
+    }
   }
 
-  &__txt{
+  &__txt {
     opacity: 0.8;
     color: #30414d;
     margin-right: 35px;
+    @include md-block {
+      grid-area: txt;
+      margin-right: 0;
+    }
+
   }
 
-  &__btn{
+  &__btn {
     width: 263px;
     height: 49px;
     border-radius: 100px;
@@ -147,17 +255,33 @@
 
     margin-right: 20px;
     @include tr;
+    @include md-block {
+      grid-area: btn;
+      margin-right: 0;
+    }
+    @include sm-block{
+      width: 229px;
+      height: 42px;
+    }
 
-    &:hover{
+    &:hover {
       background: #30414d;
       color: $bg;
     }
   }
 
-  &__btn2{
+  &__btn2 {
     width: 235px;
     height: 49px;
     font-size: 18px;
+    @include md-block {
+      grid-area: btn2;
+    }
+    @include sm-block{
+      width: 215px;
+      height: 40px;
+      font-size: 14px;
+    }
   }
 
 
@@ -166,37 +290,56 @@
 .rev {
   box-sizing: border-box;
   border-radius: 8px;
-  border: 1px solid rgba(#30414d,0.15);
+  border: 1px solid rgba(#30414d, 0.15);
   height: auto;
   @include tr;
 
-  &:hover{
+  &:hover {
     transform: scale(1.04);
     box-shadow: 0 10px 20px #98b1c3;
     background-color: $bg;
+    @include lg-block {
+      transform: none;
+      box-shadow: none;
+      background-color: #ecf5fa;
+    }
 
-    &:before{
+    &:before {
       opacity: 0.2;
-    }
-    
-    img{
-      border-color: #ecf5fa;
+      @include lg-block {
+        opacity: 0;
+      }
     }
 
-    .rev{
-      &__wrap{
+    img {
+      border-color: #ecf5fa;
+      @include lg-block {
+        border-color: #d7e8f1;
+      }
+    }
+
+    .rev {
+      &__wrap {
         transform: scale(0.96);
+        @include lg-block {
+          transform: none;
+        }
       }
-      &__quote{
+
+      &__quote {
         background-color: #46afe8;
+        @include lg-block {
+          background-color: #a6d5ee;
+        }
       }
-      &__link{
+
+      &__link {
         color: $btn;
       }
     }
   }
 
-  &:before{
+  &:before {
     content: '';
     display: block;
     border-radius: 8px;
@@ -211,7 +354,7 @@
     opacity: 0;
   }
 
-  &__wrap{
+  &__wrap {
     height: 100%;
     position: relative;
     z-index: 2;
@@ -221,25 +364,39 @@
     padding: 0 25px 25px 25px;
     color: #000000;
     @include tr;
+    @include sm-block{
+      padding: 0 15px 30px 15px;
+    }
   }
 
-  &__img{
+  &__img {
     display: block;
     position: relative;
     //transform: translateY(-60%);
     margin-top: -120px;
     margin-bottom: 20px;
-    img{
+    @include sm-block{
+      margin-top: -80px;
+    }
+    @include sm-block{
+      margin-bottom: 5px;
+    }
+
+    img {
       width: 195px;
       height: 195px;
       border: 20px solid #d7e8f1;
       border-radius: 50%;
       @include tr;
+      @include sm-block{
+        width: 140px;
+        height: 140px;
+      }
     }
 
   }
 
-  &__quote{
+  &__quote {
     width: 66px;
     height: 66px;
     background-color: #a6d5ee;
@@ -251,38 +408,61 @@
     top: 20px;
     right: -9px;
     @include tr;
+    @include sm-block{
+      width: 44px;
+      height: 43px;
+      right: 0;
+    }
 
-    svg{
+    svg {
       display: block;
+      @include sm-block{
+        width: 19px;
+        height: 16px;
+      }
     }
   }
 
-  &__name{
+  &__name {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 5px;
     text-align: center;
+    @include sm-block{
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
   }
 
-  &__course{
+  &__course {
     font-size: 14px;
     font-weight: 400;
     font-style: italic;
     text-align: center;
     margin-bottom: 15px;
+    @include sm-block{
+      font-size: 12px;
+    }
   }
 
-  &__content{
+  &__content {
     opacity: 0.8;
     font-size: 14px;
-    line-height: lh(14px,23.03px);
+    line-height: lh(14px, 23.03px);
     margin-bottom: 20px;
+    @include sm-block{
+      font-size: 13px;
+    }
   }
 
-  &__link{
+  &__link {
     margin-top: auto;
     font-weight: 600;
     text-align: center;
     @include tr;
+    @include sm-block{
+      text-align: left;
+      align-self: flex-start;
+    }
   }
 }
