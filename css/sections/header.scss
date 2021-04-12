@@ -5,6 +5,61 @@
   left: 0;
   width: 100%;
 
+  &__head{
+    background: #1E7EB1;
+    padding: 10px 0;
+    @include md-block{
+      display: none;
+    }
+
+    .container  {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__link{
+    font-size: 14px;
+    color: $bg;
+    display: flex;
+    align-items: center;
+    @include tr;
+
+    &:hover{
+      color: $btn-h;
+    }
+
+    svg{
+      margin-right: 15px;
+    }
+  }
+
+  &__addr{
+    margin-right: 80px;
+  }
+
+  &__mail{
+    margin-right: 20px;
+  }
+
+  &__search{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    color: $bg;
+    stroke: $bg;
+    @include tr;
+
+    &:hover{
+      color: $btn-h;
+      stroke: $btn-h;
+    }
+
+    svg{
+      margin-right: 10px;
+    }
+  }
+
 
   &__top {
     display: flex;
@@ -122,24 +177,23 @@
 
   &__nav {
     flex-grow: 1;
-    max-width: 1165px;
     margin-right: auto;
   }
 
-  &__search {
-    padding: 15px;
-    stroke: #333333;
-    margin-left: 30px;
-    @include tr;
-
-    &:hover {
-      stroke: $btn-h;
-    }
-
-    svg {
-      display: block;
-    }
-  }
+  //&__search {
+  //  padding: 15px;
+  //  stroke: #333333;
+  //  margin-left: 30px;
+  //  @include tr;
+  //
+  //  &:hover {
+  //    stroke: $btn-h;
+  //  }
+  //
+  //  svg {
+  //    display: block;
+  //  }
+  //}
 
 }
 

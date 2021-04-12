@@ -49,8 +49,10 @@ block content
                     .advantages__list
                         each i in advsList
                             .advantages__item
-                                +image('images/content/advantages/img.svg')
-                                span!=i
+                                .advantages__item-img
+                                    +image(i.img)
+                                .advantages__item-title!=i.title
+                                .advantages__item-txt!=i.txt
         //- sets
         section.index__sets
             .sets
