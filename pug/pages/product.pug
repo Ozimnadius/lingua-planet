@@ -1,0 +1,109 @@
+extends ../main
+
+block variables
+    - var title = 'Главная'
+
+block content
+    //- bread
+
+    .container.page__container
+        .page__bread
+            .bread
+                a(href='/').bread__link
+                    <svg class="bread__link-svg" viewBox="0 0 17 18" id="home" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.764 8.319L8.918.592a.58.58 0 00-.837 0L.236 8.319c-.212.208-.29.55-.197.857.094.306.34.51.615.51h1.962v6.954c0 .427.292.773.653.773h3.89c.36 0 .652-.343.655-.767l.028-4.642h1.312v4.636c0 .427.292.773.654.773h3.922c.361 0 .654-.346.654-.773V9.686h1.962c.275 0 .521-.204.615-.51.094-.306.015-.649-.197-.857zm-3.034-.178c-.36 0-.654.346-.654.772v6.955h-2.615V11.23c0-.426-.292-.772-.653-.772H7.192c-.359 0-.65.342-.654.767l-.027 4.642H3.923V8.913c0-.426-.292-.772-.654-.772H2.46L8.5 2.19l6.04 5.95h-.81z"/>
+                    </svg>
+                a(href='/catalog.html').bread__link
+                    span.bread__link-txt Страны
+                a(href='/catalog.html').bread__link
+                    span.bread__link-txt Великобритания
+                span.bread__link.active
+                    span.bread__link-txt BOURNEMOUTH UNIVERSITY, БОРНМУТ
+
+        h1.page__title BOURNEMOUTH UNIVERSITY, БОРНМУТ
+
+    .catalog.product
+        .container
+            .row
+                //- left
+                aside.catalog__left.left
+                    //- menu
+                    .catalog__menu
+                        +amenu(catalogCats,catalogSubmenu)
+
+                    //- consult
+                    .catalog__consult
+                        .catalog__consult-top
+                            .catalog__consult-image
+                                +image('images/content/catalog/img.svg','catalog__consult-img')
+                            .catalog__consult-title Нужна консультация?
+                            .catalog__consult-txt Наши специалисты ответят на любой интересующий вопрос
+                        button(type='button').catalog__consult-btn.jsQuestion ЗАДАТЬ ВОПРОС
+
+
+                //- right
+                main.catalog__right.right
+                    //- main
+                    .product__main
+                        .row
+                            //- left
+                            .product__left
+                                //- sliders
+                                .product__sliders
+                                    //- slider
+                                    .product__slider
+                                        .swiper-container.pslider
+                                            .swiper-wrapper
+                                                each i in [1,2,3,4,5]
+                                                    .swiper-slide.pslide
+                                                        .pslide__img
+                                                            +image('images/content/catalog/product/hq' + i + '.png','pslide__img-img')
+                                        //- nav
+                                        .product__nav
+                                            button(type='button').product__prev.product__arr
+                                                <svg class="product__arr-svg" viewBox="0 0 11 19" id="arr-l" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.3 18.4c-.3 0-.6-.1-.9-.4L.6 10.3C.2 9.7.2 9 .6 8.5L8.4.7c.5-.5 1.3-.5 1.8 0s.5 1.3 0 1.8L3.3 9.4l6.9 6.9c.5.5.5 1.3 0 1.8-.3.1-.6.3-.9.3z"/>
+                                                </svg>
+                                            button(type='button').product__next.product__arr
+                                                <svg class="product__arr-svg" viewBox="0 0 11 19" id="arr-r" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.7 18.4c-.3 0-.6-.1-.9-.4-.5-.5-.5-1.3 0-1.8l6.9-6.9L.8 2.5C.3 2 .3 1.2.8.7S2.1.2 2.6.7l7.8 7.8c.2.2.4.6.4.9s-.1.6-.4.9L2.6 18c-.2.2-.6.4-.9.4z"/>
+                                                </svg>
+                                        //- controls
+                                        .product__controls
+                                            button(type='button').product__control.jsCompare
+                                                +icon('compare','product__control-svg product__control-svg_compare')
+                                            button(type='button').product__control.jsFavorite
+                                                +icon('heart','product__control-svg product__control-svg_heart')
+                                    //- thumbs
+                                    .product__thumbs
+                                        .swiper-container.pthumbs
+                                            .swiper-wrapper
+                                                each i in [1,2,3,4,5]
+                                                    .swiper-slide.pthumb
+                                                        .pthumb__img
+                                                            +image('images/content/catalog/product/thumb' + i + '.png','pthumb__img-img')
+
+                            //- right
+                            .product__right
+                                .product__chars
+                                    each i in productChars
+                                        .product__char.pchar
+                                            .pchar__name= i.name
+                                            .pchar__val= i.val
+                                button(type='button').product__btn.btn3 Оставить заявку
+                        //tabs
+                        .product__tabs.ptabs
+                            each i,x in productTabs
+                                div(class = x == 0 ? 'active' : '').ptabs__item
+                                    button(type='button').ptabs__sw= i
+                                    .ptabs__tab.ptab
+                                        .content
+                                            p Борнмут- молодой, оживленный город, расположенный в двух часах езды от Лондона. Город находится на южном побережье Великобритании, является популярным среди англичан курортом на берегу Ла-Манша, который знаменит своими песчаными пляжами длиной в 12 км. Здесь всегда ощущается атмосфера отдыха!
+                                            p Находясь на компусе Lansdowne Борнмутского университета, школа расположена на расстоянии пешей прогулки как от пляжей, так и от центра города. Кампус прекрасно оснащен, ученики проживают в комфортабельной резиденции в одноместных комнатах с удобствами.
+                                            h3
+                                                |Описание курса&nbsp;
+                                                span= i
+                                            p Дружелюбные и профессиональные преподаватели школы используют коммуникативную методику в интерактивной среде обучения, что помогает детям быстро закрепить уже имеющиеся знания английского языка и получить новые. Цель уроков - сосредоточение на создании навыков общения на английском. Учителя приближают язык к жизненным ситуациям при помощи функционального подхода. Уроки включают проектные работы, инетересные мероприятия, подготовку к экскурсиям, чтобы ребята могли продолжить обучение за пределами классной комнаты.
+                                            p Дети делятся на возрастные группы 10-12 и 13-17 лет на уроках английского, на мероприятиях и экскурсиях разделения по возрасту нет.
+
+

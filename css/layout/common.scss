@@ -10,22 +10,22 @@
   line-height: 1.42;
   text-align: center;
   @include tr;
-  @include sm-block{
+  @include sm-block {
     font-size: 14px;
   }
 
 
-  &:hover, &:focus,&:active {
+  &:hover, &:focus, &:active {
     background: $btn-h;
   }
 }
 
-.btn3{
+.btn3 {
   @extend .btn;
   border-radius: 100px;
 }
 
-.link{
+.link {
   border-radius: 100px;
   border: 1px solid #0374c6;
   display: flex;
@@ -38,16 +38,16 @@
   font-weight: 600;
   @include tr;
 
-  &:hover{
+  &:hover {
     background: #0374c6;
     color: $bg;
   }
 }
 
-.arr{
+.arr {
   width: 59px;
   height: 59px;
-  background-color: rgba($bg,.5);
+  background-color: rgba($bg, .5);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -57,66 +57,66 @@
   stroke: #ed9c3c;
   @include tr;
 
-  svg{
+  svg {
     display: block;
   }
 
-  &:hover{
+  &:hover {
     background: $bg;
   }
 }
 
-.jq-selectbox{
+.jq-selectbox {
   width: 100%;
   font-family: Gilroy;
 
-  &.opened{
-    .jq-selectbox{
-      &__trigger{
-        &-arrow{
+  &.opened {
+    .jq-selectbox {
+      &__trigger {
+        &-arrow {
           transform: rotate(-180deg);
         }
       }
     }
   }
 
-  &__select{
+  &__select {
     height: 61px;
     padding: 0 40px 0 25px;
     display: flex;
     align-items: center;
     background: $bg;
     border-color: transparent;
-    font: 20px/32px Gilroy,sans-serif;
+    font: 20px/32px Gilroy, sans-serif;
     box-shadow: none;
     color: #828282;
     text-shadow: none;
-    @include sm-block{
+    @include sm-block {
       height: 40px;
       padding: 0 30px 0 15px;
     }
 
-    &-text{
+    &-text {
       color: #828282;
       font-size: 20px;
       font-weight: 500;
-      @include sm-block{
+      @include sm-block {
         font-size: 16px;
       }
     }
   }
 
-  &__trigger{
+  &__trigger {
     border: none;
     width: 40px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    @include sm-block{
+    @include sm-block {
       width: 30px;
     }
 
-    &-arrow{
+    &-arrow {
       position: static;
       border: none;
       width: 16px;
@@ -125,7 +125,7 @@
     }
   }
 
-  &__dropdown{
+  &__dropdown {
     max-height: 300px;
     overflow-y: auto;
     margin: 0;
@@ -133,14 +133,103 @@
     background-color: #f3f3f3;
   }
 
-  li{
+  li {
     padding: 15px 25px;
     color: #828282;
     font-size: 14px;
     font-weight: 500;
 
-    &.selected{
+    &.selected {
       background-color: $btn-h;
+    }
+  }
+}
+
+.bread {
+  padding: 25px 0;
+  @include sm-block{
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+
+  &__link {
+    padding: 0 15px;
+    border-right: 1px solid $text2;
+    line-height: 1.8;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &.active {
+      border-color: transparent;
+
+    }
+
+    &-svg {
+      width: 17px;
+      height: 18px;
+      fill: $btn;
+      display: inline-block;
+      margin-bottom: -2px;
+    }
+
+    &-txt {
+      color: $text2;
+      font-size: 14px;
+      line-height: 1;
+      @include sm-block {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.left {
+  @include col;
+  @include size(6);
+  @include md-block {
+    display: none;
+  }
+}
+
+.right {
+  @include col;
+  @include size(18);
+  padding-left: 20px;
+
+  @include lg-block {
+    padding-left: 0;
+  }
+  @include size-md(24);
+  @include size-sm(24);
+
+
+  &__bread {
+    margin-bottom: 5px;
+    @include md-block {
+      margin-bottom: 20px;
+    }
+    @include sm-block {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+  }
+}
+
+.page {
+  &__title {
+    font-weight: bold;
+    font-size: 35px;
+    color: #134864;
+    @include md-block {
+      font-size: 28px;
+    }
+    @include sm-block{
+      font-size: 20px;
     }
   }
 }

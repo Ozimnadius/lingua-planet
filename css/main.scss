@@ -7,7 +7,16 @@ $text: #192b38;
 $bg: #ffffff;
 $btn: #ffa478;
 $btn-h: #FFA34E;
+$border: #e8e8e8;
+$black: #000000;
+$text2: #9a9a9a;
 
+$main1: #1E7EB1;
+$bg2: #f8f8f8;
+$icon: #cecece;
+$main3: #14c264;
+$headers: #191919;
+$main2: #f6c03f;
 
 
 //another
@@ -31,6 +40,8 @@ $font-size: 16px;
 @import "sections/offers";
 @import "sections/steps";
 @import "sections/revs";
+@import "sections/catalog";
+@import "sections/product";
 @import "sections/footer";
 
 

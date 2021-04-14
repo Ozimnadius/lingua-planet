@@ -54,6 +54,7 @@ body {
 }
 
 .content {
+  @include headers;
   @include content;
 }
 

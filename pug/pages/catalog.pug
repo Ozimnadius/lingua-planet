@@ -1,0 +1,56 @@
+extends ../main
+
+block variables
+    - var title = 'Главная'
+
+block content
+    //- bread
+
+    .container.page__container
+        .page__bread
+            .bread
+                a(href='/').bread__link
+                    <svg class="bread__link-svg" viewBox="0 0 17 18" id="home" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.764 8.319L8.918.592a.58.58 0 00-.837 0L.236 8.319c-.212.208-.29.55-.197.857.094.306.34.51.615.51h1.962v6.954c0 .427.292.773.653.773h3.89c.36 0 .652-.343.655-.767l.028-4.642h1.312v4.636c0 .427.292.773.654.773h3.922c.361 0 .654-.346.654-.773V9.686h1.962c.275 0 .521-.204.615-.51.094-.306.015-.649-.197-.857zm-3.034-.178c-.36 0-.654.346-.654.772v6.955h-2.615V11.23c0-.426-.292-.772-.653-.772H7.192c-.359 0-.65.342-.654.767l-.027 4.642H3.923V8.913c0-.426-.292-.772-.654-.772H2.46L8.5 2.19l6.04 5.95h-.81z"/>
+                    </svg>
+                span.bread__link.active
+                    span.bread__link-txt Страны
+        h1.page__title Обучение в Великобритании
+
+    .catalog
+            .container
+                .row
+                    //- left
+                    aside.catalog__left.left
+                        //- menu
+                        .catalog__menu
+                            +amenu(catalogCats,catalogSubmenu)
+
+                        //- consult
+                        .catalog__consult
+                            .catalog__consult-top
+                                .catalog__consult-image
+                                    +image('images/content/catalog/img.svg','catalog__consult-img')
+                                .catalog__consult-title Нужна консультация?
+                                .catalog__consult-txt Наши специалисты ответят на любой интересующий вопрос
+                            button(type='button').catalog__consult-btn.jsQuestion ЗАДАТЬ ВОПРОС
+
+
+                    //- right
+                    main.catalog__right.right
+
+                        //- top
+                        .catalog__top
+                            .content
+                                p Предоставляем спектр услуг по установке, монтажу, настройке электроники и сантехники. Занимаемся скупкой и экологичной утилизацией старой техники. А также предлагаем воспользоваться системой кредитования для того, чтобы вы смогли приобрести необходимый товар или услугу прямо сейчас. Выполняем работы в день заказа, делаем все быстро и качественно!
+
+                        //- list
+                        .catalog__list
+                            .row
+                                each i,x in catalogCats
+                                    +icat(i.title,i.img,'catalog__cat')
+
+                        //- bottom
+                        .catalog__bottom
+                            .content
+                                p Предоставляем спектр услуг по установке, монтажу, настройке электроники и сантехники. Занимаемся скупкой и экологичной утилизацией старой техники. А также предлагаем воспользоваться системой кредитования для того, чтобы вы смогли приобрести необходимый товар или услугу прямо сейчас. Выполняем работы в день заказа, делаем все быстро и качественно!

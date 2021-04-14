@@ -5,6 +5,13 @@
   left: 0;
   width: 100%;
 
+  &_second{
+    position: static;
+     @include md-block{
+       border-bottom: 1px solid #CECECE;
+     }
+  }
+
   &__head{
     background: #1E7EB1;
     padding: 10px 0;
